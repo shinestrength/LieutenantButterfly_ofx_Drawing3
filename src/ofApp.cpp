@@ -33,7 +33,15 @@ void ofApp::setup(){
 	
 	tracker.setup();
     
+    for (int i = 0; i<NWALLS; i++){
+        
+        
+        wallSet[i].setup();
+        wallSet[i].setWallColor(i);
     
+        
+    
+    }
   
     
     
@@ -70,7 +78,7 @@ void ofApp::update(){
     
     for (int i = 0; i<NWALLS; i++){
     
-    
+        
         wallSet[i].update();
        
         //Get and Set Values;
@@ -94,7 +102,7 @@ void ofApp::update(){
 void ofApp::draw(){
    
     
-    
+    ofDrawBitmapString(ofToString((int) ofGetFrameRate()), ofGetWidth() - 20, ofGetHeight() - 10);
     
     //Draw BG
 
@@ -102,10 +110,12 @@ void ofApp::draw(){
     ofBackgroundGradient(ofColor::blueSteel,ofColor::blue, OF_GRADIENT_LINEAR);
     
     //Draw Walls
-     ofEnableBlendMode(OF_BLENDMODE_SCREEN);
+    //ofEnableBlendMode(OF_BLENDMODE_SCREEN);
+    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
     
    for (int i = 0; i<NWALLS; i++){
-  
+       
+       
        wallSet[i].draw();
      
    

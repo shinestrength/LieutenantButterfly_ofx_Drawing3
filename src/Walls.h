@@ -28,6 +28,8 @@ public:
     void setOrientation(ofVec3f o);
     void getMouthWidth(float w);
     
+    void setWallColor(int i);
+    
     
     bool isGlistening;
     bool isCrystalline;
@@ -46,7 +48,7 @@ public:
     
     float camTrackerMouthWidth;
     
-    
+    ofBoxPrimitive box;
    
     
     Walls();
